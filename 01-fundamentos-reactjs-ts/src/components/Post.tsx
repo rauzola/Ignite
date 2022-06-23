@@ -23,7 +23,9 @@ interface PostProps {
   content: Content[];
 }
 
-export function Post({ author, publishedAt, content }: PostProps) {
+type PostPropsWithoutId = Omit<PostProps, 'id'>
+
+export function Post({ author, publishedAt, content }: PostPropsWithoutId) {
   const [comments, setComments] = useState([
     'Post muito bacana, hein?!'
   ]);

@@ -6,7 +6,25 @@ import styles from "./App.module.css";
 
 import './global.css';
 
-const post = [
+interface Author {
+  name: string
+  role: string
+  avatarUrl: string
+}
+
+interface Content {
+  type: 'paragraph' | 'link'
+  content: string
+}
+
+export interface PostProps {
+  id: number
+  author: Author
+  publishedAt: Date
+  content: Content[]
+}
+
+const post: PostProps[] = [
   {
     id: 1,
     author: {
